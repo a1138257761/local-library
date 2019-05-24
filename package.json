@@ -1,0 +1,32 @@
+{
+  "name": "reconsitution-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build staging": "vue-cli-service --mode staging"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "echarts": "^4.2.1",
+    "element-ui": "^2.6.1",
+    "mint-ui": "^2.2.13",
+    "qs": "^6.7.0",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.1",
+    "vue-signature-pad": "^1.1.9-beta.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "babel-plugin-component": "^1.1.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
+    "vue-template-compiler": "^2.5.21"
+  }
+}

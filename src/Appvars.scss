@@ -1,0 +1,62 @@
+/* 设计图宽度375px */
+$rem: 15;
+
+/* px转rem */
+@function r($px) {
+    @return ($px / $rem)+rem;
+}
+
+$header-height: 44px;
+$nav-height: 44px;
+$tabbar-height: 55px;
+$normal-notice-height: 0px;
+$iphoneX-notice-height: 0px;
+
+/* color */
+$main-color: #2d8eff;
+$main-color-inverse: #fff;
+$gray-white:#d3e7ff;
+$font-normal-color: #333;
+$font-light-color: #ccc;
+$border-color-default: #c0c4cc;
+$font-color-black: #000000;
+$font-color-light-gray: #666;
+$deep-orange: #ea6151;
+$red-color: #f00;
+$cyan-color: #00c4c0;
+$pink-color: #ff00ff;
+$green-color: #4ce630;
+$gray-color: #cfd2ce;
+$shallow-green: #5e7a88;
+$orange: #FBA62E;
+$brown-color: #8a6d3b;
+$deep-blue: #00489c;
+$shallow-yellow: #E2EB68;
+$main-border-color:#6CB3E9;
+$light-white:#f8f8f8;
+
+/* font-size 常用样式 以下全以fz-字号缩写 */
+$multiplier: 1;
+$fz-10: r(10 * $multiplier);
+$fz-12: r(12 * $multiplier);
+$fz-14: r(14 * $multiplier);
+$fz-16: r(16 * $multiplier);
+$fz-18: r(18 * $multiplier);
+$fz-20: r(20 * $multiplier);
+$fz-22: r(22 * $multiplier);
+$fz-24: r(24 * $multiplier);
+$fz-25: r(24 * $multiplier);
+$fz-26: r(26 * $multiplier);
+$fz-28: r(28 * $multiplier);
+$fz-30: r(30 * $multiplier);
+
+
+
+$default-radius: r(4);
+
+%flex-center {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
