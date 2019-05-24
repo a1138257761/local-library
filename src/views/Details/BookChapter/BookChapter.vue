@@ -53,9 +53,14 @@ export default {
         const { id } = this.$route.params;
         this.currentId = id;
         try {
-            const { data } = await this.$http.get(
-                "/book-chapters/56f8da09176d03ac1983f6cd"
-            );
+            // const { data } = await this.$http.get(
+            //     `/book-chapters/${id}`
+            // );
+            const { data } = await this.$http.get('/book-chapters', {
+                params: {
+                    id: this.currentId,
+                }
+            })
             this.chapters = data.chapters;
         } catch (err) {
             reject(err);

@@ -95,25 +95,27 @@ export default {
             const { data } = await this.$http.get(
                 `book/short-reviews?book=${id}`
             );
-            console.log('data', data);
             this.hotComments = data.docs.slice(0, 2);
         },
         doSearch() {
-            this.$router.push({
-                name: "Search",
-                params: {
-                    keyword: this.searchText
-                }
-            });
+            this.$router.push({ path: `/Search/${this.searchText}` });
+            // this.$router.push({
+            //     name: "Search",
+            //     params: {
+            //         keyword: this.searchText
+            //     }
+            // });
         },
         startRead() {
-            this.$router.push({ path: `/Details/Chapter/56f8da09176d03ac1983f6cd`});
+            this.$router.push({ path: `/Details/Chapter/${this.data._id}`});
         },
     },
+    // 获取书籍相关信息
     async created() {
         this.id = this.$route.params.id;
         const { data } = await this.$http.get(`/book-info/${this.id}`);
         this.data = data;
+        console.log(this.data)
         this.getComments(this.data._id);
     }
 };

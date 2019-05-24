@@ -1,5 +1,5 @@
 <template>
-    <div class="search-result">
+    <div class="search-result" v-if="lists">
         <div class="list-item" v-for="item of lists" :key="item._id" @click="itemClick(item._id)">
             <div class="cover">
                 <img :src="item.cover | imgFormat">
@@ -14,6 +14,12 @@
                 <p class="description">{{item.shortIntro}}</p>
             </div>
         </div>
+    </div>
+    <div v-else class="not-found">
+        <div class="img">
+            <img src="http://m.zhuishushenqi.com/image/e9df8fb0cce3.ku.png">
+        </div>
+        <p>抱歉，没有找到与“{{keywords}}”相关的书籍</p>
     </div>
 </template>
 
@@ -32,9 +38,9 @@ export default {
         };
     },
     methods: {
-      itemClick(id) {
-        this.$router.push({ path: `/Details/BookInformation/${id}`});
-      },
+        itemClick(id) {
+            this.$router.push({ path: `/Details/BookInformation/${id}` });
+        }
     },
     async created() {
         try {
@@ -42,9 +48,8 @@ export default {
                 `/search?keyword=${this.keywords}`
             );
             this.lists = data.books;
-            console.log(this.lists);
         } catch (err) {
-            console.log(err);
+            console.err(err);
         }
     }
 };
@@ -91,15 +96,29 @@ export default {
             }
         }
         .description {
-          font-size: $fz-12;
-          color: #999;
-          width: r(270);
-          height: r(30);
-          line-height: r(30);
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+            font-size: $fz-12;
+            color: #999;
+            width: r(270);
+            height: r(30);
+            line-height: r(30);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
+    }
+}
+.not-found {
+    text-align: center;
+    .img {
+        margin: r(20) auto;
+        img {
+            width: 50%;
+            height: 50%;
+        }
+    }
+    p {
+        font-size: $fz-12;
+        color: #999;
     }
 }
 </style>
