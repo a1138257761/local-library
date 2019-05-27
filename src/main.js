@@ -6,7 +6,8 @@ import http from "./http";
 import {
   imgFormat
 } from './utils/tools';
-import Mint from 'mint-ui'
+import Mint from 'mint-ui';
+import './assets/css/my-mint.scss';
 // import "./registerServiceWorker";
 
 let scale = 1 / window.devicePixelRatio

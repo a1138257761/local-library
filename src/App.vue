@@ -35,4 +35,9 @@ export default {
         overflow-y: auto;
     }
 }
+.ml5 {margin-left: r(5)}
+.mr5 {margin-right: r(5)}
+.mt5 {margin-top: r(5)}
+.mt10 {margin-top: r(10)}
+.mb5 {margin-bottom: r(5)}
 </style>
